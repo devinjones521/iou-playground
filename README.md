@@ -24,10 +24,12 @@ deliberately trivial.
 
 ## A worked example, already here
 
-**[PR #93](../../pull/93)** is an ordinary refactor of `fetchUser` that does not add retry logic.
-The bot commented on it, once, about twenty seconds after the branch was pushed — unprompted, with
-its reasoning about why that particular diff does not keep the promise. Nothing was filed, because
-nobody has reacted 👍.
+**[PR #70](../../pull/70)** is an ordinary refactor of `fetchUser` that does not add retry logic.
+The bot commented on it **21 seconds** after it opened — unprompted, with its reasoning about why
+that particular diff does not keep the promise. Nothing was filed, because nobody reacted 👍.
+
+It is also the pull request you see in the demo video, so you can watch the film and then read the
+real object it was filmed from.
 
 ## Try it yourself
 
@@ -67,4 +69,4 @@ common causes:
 - **Spend ceilings.** They are capped per commenter per hour, per tick, and for the lifetime of the
   deployment, so the bot goes quiet rather than run up a bill on a stranger's comments.
 
-[PR #93](../../pull/93) is there either way — it does not depend on the bot still being awake.
+[PR #70](../../pull/70) is there either way — it does not depend on the bot still being awake.
