@@ -1,4 +1,4 @@
-// Demo service for the IOU playground.
+// Demo service — tidied for the IOU playground.
 export async function fetchUser(id) {
   const res = await fetch(`https://api.example.com/users/${id}`);
   if (!res.ok) throw new Error(`fetchUser failed: ${res.status}`);
