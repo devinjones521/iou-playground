@@ -44,9 +44,13 @@ Within about twenty seconds it will appear as an entry in [the ledger](../../iss
 else happens — the promise is simply remembered. Try a comment that is *not* a promise too ("nice
 one, shipping it") and watch it be correctly ignored.
 
-**2. Come back and break it.** Open a pull request that edits the promised function without doing
-the promised work — change `invoiceTotal` in `src/billing.js` cosmetically, say. The bot will leave
-exactly one comment linking the promise you made in step 1.
+**2. Come back and break it.** Open a **new** pull request that edits the promised function without
+doing the promised work — change `invoiceTotal` in `src/billing.js` cosmetically, say. The bot will
+leave exactly one comment linking the promise you made in step 1.
+
+*Please open a new branch rather than pushing to the existing pull requests: #68, #69, #70 and #72
+are the exact objects shown in the demo video, and #69 in particular is the "it stays silent"
+example. Leaving them untouched keeps the video checkable against this repository.*
 
 React 👍 on that comment and it files a tracking issue assigned to you. React 👎 and it drops the
 promise. It will not file anything on its own.
