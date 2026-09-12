@@ -22,7 +22,14 @@ repository's `feature_list.json`, this is the object it names.
 The two files in `src/` exist so those pull requests have real diffs to reason about. They are
 deliberately trivial.
 
-## Try it
+## A worked example, already here
+
+**[PR #93](../../pull/93)** is an ordinary refactor of `fetchUser` that does not add retry logic.
+The bot commented on it, once, about twenty seconds after the branch was pushed — unprompted, with
+its reasoning about why that particular diff does not keep the promise. Nothing was filed, because
+nobody has reacted 👍.
+
+## Try it yourself
 
 The bot is running. There is currently one open promise in the ledger — to add retry handling to
 `fetchUser`.
