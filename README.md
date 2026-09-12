@@ -31,15 +31,36 @@ nobody has reacted 👍.
 
 ## Try it yourself
 
-The bot is running. There is currently one open promise in the ledger — to add retry handling to
-`fetchUser`.
+The bot is running and polls this repository every 20 seconds. The most convincing thing you can do
+takes two steps, because it exercises the part that is hardest to believe — that nobody ever types
+at the bot.
 
-1. Open a pull request that edits `src/users.js` but **does not** add any retry logic.
-2. Wait about twenty seconds.
+**1. Make a promise to a human.** Comment on any open pull request here, phrased as a promise of
+later work, addressed to a person and not to the bot. For example:
 
-You should get exactly one comment explaining which promise your change touches and why it doesn't
-keep it. Edit the same PR to add a retry loop and the bot will settle the promise instead.
+> Looks fine. I'll add retry handling to `invoiceTotal` in a follow-up PR rather than here.
 
-Spend is capped three ways — per commenter per hour, per tick, and for the lifetime of the
-deployment — so the bot will go quiet rather than run up a bill. If it says nothing at all, that is
-usually the correct answer; the server log records the reason for every silence.
+Within about twenty seconds it will appear as an entry in [the ledger](../../issues/67). Nothing
+else happens — the promise is simply remembered. Try a comment that is *not* a promise too ("nice
+one, shipping it") and watch it be correctly ignored.
+
+**2. Come back and break it.** Open a pull request that edits the promised function without doing
+the promised work — change `invoiceTotal` in `src/billing.js` cosmetically, say. The bot will leave
+exactly one comment linking the promise you made in step 1.
+
+React 👍 on that comment and it files a tracking issue assigned to you. React 👎 and it drops the
+promise. It will not file anything on its own.
+
+### If the bot says nothing
+
+That is usually the correct answer, and the server log records the reason for every silence. The
+common causes:
+
+- **Your pull request doesn't touch a promised symbol.** Silence is the default here, by design.
+- **The open promise was already filed by an earlier visitor.** Once a promise has a tracking issue
+  against it, raising it again on every future pull request is exactly the behaviour that gets a
+  bot muted, so it stops. Make a fresh promise as in step 1 and it will wake up again.
+- **Spend ceilings.** They are capped per commenter per hour, per tick, and for the lifetime of the
+  deployment, so the bot goes quiet rather than run up a bill on a stranger's comments.
+
+[PR #93](../../pull/93) is there either way — it does not depend on the bot still being awake.
