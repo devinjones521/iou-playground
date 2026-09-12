@@ -1,8 +1,10 @@
 // Demo service for the IOU playground.
 export async function fetchUser(id) {
-  const res = await fetch(`https://api.example.com/users/${id}`);
+  const url = `https://api.example.com/users/${id}`;
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`fetchUser failed: ${res.status}`);
-  return res.json();
+  const body = await res.json();
+  return body;
 }
 
 export function formatName(user) {
