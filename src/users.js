@@ -7,6 +7,7 @@ export async function fetchUser(id) {
   return body;
 }
 
+// Tidy: no behaviour change here either.
 export function formatName(user) {
   return `${user.first} ${user.last}`.trim();
 }
