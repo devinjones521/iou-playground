@@ -2,3 +2,5 @@
 export function invoiceTotal(lines) {
   return lines.reduce((sum, l) => sum + l.qty * l.unitPrice, 0);
 }
+
+export const VAT = 0.2;
